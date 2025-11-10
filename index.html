@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Tailwind -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Daisy UI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Fonts Outfit -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    
+    <!-- SweetAlert2 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Title -->
+    <title>Payoo Mobile App</title>
+</head>
+<body>
+    <div class="relative h-[610px] w-full flex items-center justify-center bg-gray-100">
+        <img src="./asset/bg.png" alt="background image" class="absolute top-40 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <img src="./asset/Group.png" alt="tick image" class="absolute top-25 left-1/2 -translate-x-1/2 -translate-y-1/2">
+    </div>
+
+    <div class="hero bg-base-200 relative">
+        <div class="hero-content flex-col lg:flex-row-reverse absolute -top-90">
+            
+            <div class="card bg-base-100 w-[400px] max-w-sm shrink-0 shadow-2xl">
+                <form class="card-body">
+                    <div class="form-control">
+                        <label class="label">
+                            <span  class="label-text font-[outfit] font-medium text-sm text-[#080808] mb-2">Mobile Number</span>
+                        </label>
+                        <input id="mobile" type="text" placeholder="Enter your number" class="input w-[338px] input-bordered rounded-full font-[outfit] font-light text-sm text-[#080808]" required />
+                    </div>
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text font-[outfit] font-medium text-sm text-[#080808] mb-2">4 Digit Pin</span>
+                        </label>
+                        <input id="pin" type="password" placeholder="Enter 4 Digit Pin" class="input w-[338px] input-bordered rounded-full font-[outfit] font-light text-sm text-[#080808]" required />
+                        
+                    </div>
+                    <div class="form-control mt-6">
+                        <button id="btn" class="btn w-[338px] font-[outfit] font-semibold text-base text-[#FFFFFF] px-5 py-3.5 rounded-full bg-[#0874F2]">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<script src="Script.js"></script>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Tailwind -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Daisy UI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Fonts Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- SweetAlert2 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <title>Home Page</title>
+</head>
+<body>
+    <section>
+        <div class="flex justify-around pt-3">
+            <div class="flex relative">
+                <div class="w-[50px] h-[48px] absolute top-1/2 -translate-x-20 -translate-y-1/2">
+                    <img src="./asset/Group.png" alt="Logo">
+                </div>
+
+                <div class="left-20">
+                    <h2  class="font-[outfit] font-extrabold text-base text-[#080808]">$<span id="totalMoney">45000</span></h2>
+                    <p class="font-[outfit] text-xs font-normal text-[#08080880]">Available Balance</p>
+                </div>
+            </div>
+
+            <div class="flex items-center px-[12px] py-[9px] rounded-lg border border-[#08080850] w-[102px] cursor-pointer">
+                <img class="w-[20px] h-[20px]" src="./asset/Frame.png" alt="logoutBtn">
+                <p id="logout" class="font-[outfit] text-xs font-normal text-[#08080880]">Log Out</p>
+            </div>
+        
+        </div>
+    
+        <hr class="h-[2px] bg-gray-300 shadow-md rounded-full border-0 mt-2" />
+    </section>
+    
+    <section>
+        <div class="flex flex-col p-5 px-40">
+            <h1 class="font-[outfit] font-medium text-xl text-[#080808]">🔥 Welcome to Payooo!</h1>
+            <p class="font-[outfit] font-normal text-sm text-[#08080880]">Enjoy easy and convenient financial services with us. Cashout charge is low and </p>
+        </div>
+    </section>
+
+    <!-- Options -->
+    <section class="p-5 px-40 flex justify-between">
+        <div id="money" class="w-[123px] h-[90px] gap-2.5 px-2.5 py-4 rounded-lg border border-[#080808] text-center cursor-pointer">
+            <img class="w-[24px] h-[24px] mx-auto" src="./asset/wallet1.png" alt="wallet">
+            <p id="addMoneyId" class="font-[outfit] font-normal text-sm text-[#08080880] mx-auto  ">Add Money</p>
+        </div>
+
+        <div id="cash" class="w-[123px] h-[90px] gap-2.5 px-2.5 py-4 rounded-lg border border-[#080808] text-center cursor-pointer">
+            <img class="w-[24px] h-[24px] mx-auto" src="./asset/send1.png" alt="send">
+            <p id="cashTextId" class="font-[outfit] font-normal text-sm text-[#08080880] mx-auto ">Cashout</p>
+        </div>
+
+        <div class="pr-18">
+            <div id="Transfer" class="w-[123px] h-[90px] gap-2.5 px-2.5 py-4 rounded-lg border border-[#080808] text-center cursor-pointer">
+                <img class="w-[24px] h-[24px] mx-auto" src="./asset/money1.png" alt="TransferMoney">
+                <p id="transferTextId" class="font-[outfit] font-normal text-xs text-[#08080880] mx-auto ">Transfer Money</p>
+            </div>
+        </div> 
+    </section>
+        
+    <section class="p-5 px-40 flex justify-between">
+        <div id="bonusmenu" class="w-[123px] h-[90px] gap-2.5 px-2.5 py-4 rounded-lg border border-[#080808] text-center cursor-pointer">
+            <img class="w-[24px] h-[24px] mx-auto" src="./asset/bonus1.png" alt="Bonus">
+            <p id="bonusMenuId" class="font-[outfit] font-normal text-sm text-[#08080880] mx-auto ">Get Bonus</p>
+        </div>
+
+        <div id="billpaY" class="w-[123px] h-[90px] gap-2.5 px-2.5 py-4 rounded-lg border border-[#080808] text-center cursor-pointer">
+            <img class="w-[24px] h-[24px] mx-auto" src="./asset/purse1.png" alt="purse">
+            <p id="payBillId" class="font-[outfit] font-normal text-sm text-[#08080880] mx-auto ">Pay Bill</p>
+        </div>
+
+        <div  class="pr-18">
+            <div id="transaction" class="w-[123px] h-[90px] gap-2.5 px-2.5 py-4 rounded-lg border border-[#080808] text-center cursor-pointer">
+                <img class="w-[24px] h-[24px] mx-auto" src="./asset/transaction1.png" alt="Transaction">
+                <p id="TransactionId" class="font-[outfit] font-normal text-sm text-[#08080880] mx-auto ">Transactions</p>
+            </div>
+        </div> 
+    </section>
+
+    <!-- Add Money -->
+    <section id="addMoney" class="hidden">
+        <div class="bg-base-200 p-5 px-40">
+            <h2 class="font-[outfit] font-medium text-xl text-[#080808]">Add Money</h2>
+        </div>
+        <div class="hero bg-base-200 min-h-screen">
+            <div class="hero-content flex-col lg:flex-row-reverse">
+                <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl rounded-2xl">
+                    <form class="card-body">
+                        <div class="flex flex-col gap-2">
+                            <label for="Bank" class="label">
+                                <span class="label-text font-[outfit] font-medium text-sm text-[#08080880]">Select A Bank</span>
+                            </label>
+                            <select id="Bank" required class="select w-full max-w-xs rounded-3xl font-[outfit] font-light text-sm text-[#08080880]">
+                                <option value="" disabled selected>Select bank</option>
+                                <option>Bkash</option>
+                                <option>Rocket</option>
+                                <option>Nagad</option>
+                                <option>Upay</option>
+                                <option>Cellphin</option>
+                                <option>Sure-Cash</option>
+                                <option>Sonali Sheba</option>
+                            </select>
+                        </div>
+
+                        <div class="form-control">
+                            <label for="AccNo" class="label">
+                                <span class="label-text font-[outfit] font-medium text-sm text-[#08080880] pb-2">Bank Account Number</span>
+                            </label>
+                            <input id="AccNo" type="text" placeholder="Enter 11 digit account number" class="input input-bordered font-[outfit] font-light text-sm text-[#080808] rounded-3xl" required />
+                        </div>
+
+                        <div class="form-control">
+                            <label for="amnt" class="label">
+                                <span class="label-text font-[outfit] font-medium text-sm text-[#08080880] pb-2">Amount to Add</span>
+                            </label>
+                            <input id="amnt" type="number" placeholder="Add Amount" class="input input-bordered font-[outfit] font-light text-sm text-[#080808] rounded-3xl [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none" required />
+                        </div>
+
+                        <div class="form-control">
+                            <label for="pin" class="label">
+                                <span class="label-text font-[outfit] font-medium text-sm text-[#08080880] pb-2">Pin Number</span>
+                            </label>
+                            <input id="pin" type="password" placeholder="Enter 4 digit pin number" class="input input-bordered font-[outfit] font-light text-sm text-[#080808] rounded-3xl" required />
+                        </div>
+
+                        <div class="form-control mt-6">
+                            <button id="btnAddMoney" class="btn w-[400px] rounded-3xl bg-[#0874F2] font-[outfit] font-semibold text-base text-[#FFFFFF]">Add Money</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cash Out -->
+     <section id="cashOut" class="hidden">
+        <div class="bg-base-200 p-5 px-40">
+            <h2 class="font-[outfit] font-medium text-xl text-[#080808]">Cash Out</h2>
+        </div>
+        <div class="hero bg-base-200 min-h-screen">
+            <div class="hero-content flex-col lg:flex-row-reverse">
+                <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl rounded-2xl">
+                    <form class="card-body">
+                        
+
+                        <div class="form-control">
+                            <label for="AgntNo" class="label">
+                                <span class="label-text font-[outfit] font-medium text-sm text-[#08080880] pb-2">Agent Number</span>
+                            </label>
+                            <input id="AgntNo" type="text" placeholder="Enter 11 digit number" class="input input-bordered font-[outfit] font-light text-sm text-[#080808] rounded-3xl" required />
+                        </div>
+
+                        <div class="form-control">
+                            <label for="Agntamnt" class="label">
+                                <span class="label-text font-[outfit] font-medium text-sm text-[#08080880] pb-2">Amount</span>
+                            </label>
+                            <input id="Agntamnt" type="number" placeholder="Enter amount to withdraw" class="input input-bordered font-[outfit] font-light text-sm text-[#080808] rounded-3xl [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none" required />
+                        </div>
+
+                        <div class="form-control">
+                            <label for="Agntpin" class="label">
+                                <span class="label-text font-[outfit] font-medium text-sm text-[#08080880] pb-2">Pin Number</span>
+                            </label>
+                            <input id="Agntpin" type="password" placeholder="Enter 4 digit pin number" class="input input-bordered font-[outfit] font-light text-sm text-[#080808] rounded-3xl" required />
+                        </div>
+
+                        <div class="form-control mt-6">
+                            <button id="btnWithdrawMoney" class="btn w-[400px] rounded-3xl bg-[#0874F2] font-[outfit] font-semibold text-base text-[#FFFFFF]">Withdraw Money</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transfer Money -->
+     <section id="TransferMoney" class="hidden">
+        <div class="bg-base-200 p-5 px-40">
+            <h2 class="font-[outfit] font-medium text-xl text-[#080808]">Transfer Money</h2>
+        </div>
+        <div class="hero bg-base-200 min-h-screen">
+            <div class="hero-content flex-col lg:flex-row-reverse">
+                <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl rounded-2xl">
+                    <form class="card-body">
+                        
+
+                        <div class="form-control">
+                            <label for="transferAcc" class="label">
+                                <span class="label-text font-[outfit] font-medium text-sm text-[#08080880] pb-2">User Account Number</span>
+                            </label>
+                            <input id="transferAcc" type="text" placeholder="Enter 11 digit number" class="input input-bordered font-[outfit] font-light text-sm text-[#080808] rounded-3xl" required />
+                        </div>
+
+                        <div class="form-control">
+                            <label for="TransferAmount" class="label">
+                                <span class="label-text font-[outfit] font-medium text-sm text-[#08080880] pb-2">Amount</span>
+                            </label>
+                            <input id="TransferAmount" type="number" placeholder="Enter amount to transfer" class="input input-bordered font-[outfit] font-light text-sm text-[#080808] rounded-3xl [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none" required />
+                        </div>
+
+                        <div class="form-control">
+                            <label for="TransferPin" class="label">
+                                <span class="label-text font-[outfit] font-medium text-sm text-[#08080880] pb-2">Pin Number</span>
+                            </label>
+                            <input id="TransferPin" type="password" placeholder="Enter 4 digit pin number" class="input input-bordered font-[outfit] font-light text-sm text-[#080808] rounded-3xl" required />
+                        </div>
+
+                        <div class="form-control mt-6">
+                            <button id="btnSendNow" class="btn w-[400px] rounded-3xl bg-[#0874F2] font-[outfit] font-semibold text-base text-[#FFFFFF]">Send Now</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Get Bonus -->
+    <section id="Bonus" class="hidden">
+        <div class="bg-base-200 p-5 px-40">
+            <h2 id="bonusforTxn" class="font-[outfit] font-medium text-xl text-[#080808]">Get Bonus</h2>
+        </div>
+        <div class="hero bg-base-200 min-h-screen">
+            <div class="hero-content flex-col lg:flex-row-reverse">
+                <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl rounded-2xl">
+                    <form class="card-body">
+                        <div id="bonusAlertContainer"></div>    
+
+                        <div class="form-control">
+                            <label for="BonusCoupon" class="label">
+                                <span class="label-text font-[outfit] font-medium text-sm text-[#08080880] pb-2">Enter Bonus Coupon</span>
+                            </label>
+                            <input id="BonusCoupon" type="text" placeholder="Enter your coupon" class="input input-bordered font-[outfit] font-light text-sm text-[#080808] rounded-3xl" required />
+                        </div>
+
+                        
+
+                        <div class="form-control mt-6">
+                            <button id="btnGetBonus" class="btn w-[400px] rounded-3xl bg-[#0874F2] font-[outfit] font-semibold text-base text-[#FFFFFF]">Get Bonus</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bill Pay -->
+     <section id="billPay" class="hidden">
+        <div class="bg-base-200 p-5 px-40">
+            <h2 id="billPayIdForTnx" class="font-[outfit] font-medium text-xl text-[#080808]">Pay Bill</h2>
+        </div>
+        <div class="hero bg-base-200 min-h-screen">
+            <div class="hero-content flex-col lg:flex-row-reverse">
+                <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl rounded-2xl">
+                    <form class="card-body">
+                        <div class="flex flex-col gap-2">
+                            <label for="payBank" class="label">
+                                <span class="label-text font-[outfit] font-medium text-sm text-[#08080880]">Select To Pay</span>
+                            </label>
+                            <select id="payBank" required class="select w-full max-w-xs rounded-3xl font-[outfit] font-light text-sm text-[#08080880]">
+                                <option value="" disabled selected>Select bank</option>
+                                <option>Bkash</option>
+                                <option>Rocket</option>
+                                <option>Nagad</option>
+                                <option>Upay</option>
+                                <option>Cellphin</option>
+                                <option>Sure-Cash</option>
+                                <option>Sonali Sheba</option>
+                            </select>
+                        </div>
+
+                        <div class="form-control">
+                            <label for="BillAccNo" class="label">
+                                <span class="label-text font-[outfit] font-medium text-sm text-[#08080880] pb-2">Biller Account Number</span>
+                            </label>
+                            <input id="BillAccNo" type="text" placeholder="Enter account number" class="input input-bordered font-[outfit] font-light text-sm text-[#080808] rounded-3xl" required />
+                        </div>
+
+                        <div class="form-control">
+                            <label for="Payamnt" class="label">
+                                <span class="label-text font-[outfit] font-medium text-sm text-[#08080880] pb-2">Amount to Pay</span>
+                            </label>
+                            <input id="Payamnt" type="number" placeholder="Add Amount to pay" class="input input-bordered font-[outfit] font-light text-sm text-[#080808] rounded-3xl [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none" required />
+                        </div>
+
+                        <div class="form-control">
+                            <label for="billpin" class="label">
+                                <span class="label-text font-[outfit] font-medium text-sm text-[#08080880] pb-2">Pin Number</span>
+                            </label>
+                            <input id="billpin" type="password" placeholder="Enter 4 digit pin number" class="input input-bordered font-[outfit] font-light text-sm text-[#080808] rounded-3xl" required />
+                        </div>
+
+                        <div class="form-control mt-6">
+                            <button id="btnPayNowBill" class="btn w-[400px] rounded-3xl bg-[#0874F2] font-[outfit] font-semibold text-base text-[#FFFFFF]">Pay Now</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transaction History -->
+     <section id="tnxHist" class="hidden">
+        <div class="bg-base-200 p-5 px-40">
+            <h2 class="font-[outfit] font-medium text-xl text-[#080808]">Transaction History</h2>
+        </div>
+        
+        <div id="scrollingTohere" class="hero bg-base-200 h-full">
+            <div class="hero-content flex-col lg:flex-row-reverse">
+                <!-- This is the wrapper where *all* transaction cards will be appended -->
+                <div id="transactionsWrapper" class="flex flex-col gap-4 w-full max-w-md">
+                <!-- Your JS will dynamically insert each full transaction card here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="Script1.js"></script>
+</body>
+</html>
