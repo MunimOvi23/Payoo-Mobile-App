@@ -513,5 +513,5 @@ document.getElementById("transaction").addEventListener("click", function(){
 
 // Logout
 document.getElementById("logout").addEventListener("click", function(){
-    window.location.href = "./index.html";
+    window.location.href = "/";
 })
